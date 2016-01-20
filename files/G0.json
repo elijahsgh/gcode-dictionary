@@ -1,0 +1,39 @@
+{
+  "code": "G0",
+  "type": "Rapid move",
+  "format": "G0 [{AXIS}{POSITION}]",
+  "description": "G0 is used to position the tool.  G0 is expected to be used when not using the tool, but firmware such as Marlin interprets G0 and G1 as the same command.",
+  "usage_notes": "G0 and G1 may be interpreted as the same command in some firmare.",
+  "parameters": [
+    {
+      "parameter": "X{n}",
+      "description": "Move n units along the X axis."
+    },
+    {
+      "parameter": "Y{n}",
+      "description": "Move n units along the Y axis."
+    },
+    {
+      "parameter": "Z{n}",
+      "description": "Move n units along the Z axis."
+    },
+    {
+      "parameter": "F{n}",
+      "description": "Set feedrate. May be used alone to set a start and ending feed rate."
+    }
+  ],
+  "examples": [
+    {
+      "example": "G0 X100 Y100",
+      "explanation": "Move to 100,100 on the X and Y planes"
+    }
+  ],
+  "see_also": [
+    "G1"
+  ],
+  "support": {
+    "Marlin": true,
+    "Redeem": true,
+    "Smoothieware": true
+  }
+}
