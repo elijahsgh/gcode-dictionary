@@ -1,0 +1,47 @@
+{
+  "code": "G2",
+  "type": "Arc move CW",
+  "format": "G2 [X{POSITION} Y{POSITION} I{DISTANCE} J{DISTANCE} E{AMOUNT} F{FEEDRATE}]",
+  "description": "Move tool in clockwise arc.",
+  "usage_notes": "Move to the X,Y coordinates in an arc with a center of I,J.",
+  "parameters": [
+    {
+      "parameter": "X{n}",
+      "description": "X destination."
+    },
+    {
+      "parameter": "Y{n}",
+      "description": "Y destination."
+    },
+    {
+      "parameter": "I{n}",
+      "description": "Center X coordinate."
+    },
+    {
+      "parameter": "J{n}",
+      "description": "Center J coordinate."
+    },
+    {
+      "parameter": "F{n}",
+      "description": "Set feedrate. May be used alone to set a start and ending feed rate."
+    },
+    {
+      "parameter": "E{n}",
+      "description": "Extrude n units of material."
+    }
+  ],
+  "examples": [
+    {
+      "example": "G2 X100 Y105 I100 J100",
+      "explanation": "Move to 100,105 in a clockwise arc around 100, 100."
+    }
+  ],
+  "see_also": [
+    "G3"
+  ],
+  "support": {
+    "Marlin": true,
+    "Redeem": true,
+    "Smoothieware": true
+  }
+}

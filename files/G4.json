@@ -1,0 +1,24 @@
+{
+  "code": "G4",
+  "type": "Dwell.  Timed wait.",
+  "format": "G4 [S{SECONDS} P{MILLISECONDS}]",
+  "description": "Wait for a specific amount of time before continuing.",
+  "usage_notes": "Both S and P may not be implemented by your firmware.",
+  "parameters": [
+    {
+      "parameter": "S{n}",
+      "description": "Wait for n seconds."
+    },
+    {
+      "parameter": "P{n}",
+      "description": "Wait for n milliseconds."
+    }
+  ],
+  "see_also": [
+  ],
+  "support": {
+    "Marlin": true,
+    "Redeem": true,
+    "Smoothieware": true
+  }
+}
