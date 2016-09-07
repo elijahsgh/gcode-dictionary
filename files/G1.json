@@ -3,15 +3,15 @@
   "type": "Linear move",
   "format": "G1 [{AXIS}{POSITION} E{AMOUNT} F{FEEDRATE} S{ENDSTOP_CHECK}]",
   "description": "G1 is used to position the tool at a specific feed rate. The speed (feedrate) can be set with F*feedrate* and E *amount* amount of material can be extruded during the move. The firmware coordinates moves so that the feed rate for each axis and extruder is consistent and predictable. S can be used to check for endstops (S0: check, S1: ignore) but may not be implemented by your firmware.",
-  "usage_notes": "G0 and G1 may be interpreted as the same command in some firmware.",
+  "usage notes": "G0 and G1 may be interpreted as the same command in some firmware.",
   "parameters": [
     {
       "parameter": "X{n}",
       "description": "Move n units along the X axis."
     },
     {
-      "parameter": "Y{n}",
-      "description": "Move n units along the Y axis."
+      "parameter": "X{n} Y{n}",
+      "description": "Move n units along X and Y."
     },
     {
       "parameter": "Z{n}",
@@ -19,7 +19,7 @@
     },
     {
       "parameter": "F{n}",
-      "description": "Set feedrate. May be used alone to set a start and ending feed rate."
+      "description": "Set feedrate. Moves after this command will move at this rate (or slower)."
     },
     {
       "parameter": "E{n}",
@@ -36,7 +36,7 @@
       "explanation": "Move to 100,100 on the X and Y planes"
     }
   ],
-  "see_also": [
+  "related": [
     "G0"
   ],
   "support": {

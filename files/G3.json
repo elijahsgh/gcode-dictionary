@@ -3,7 +3,7 @@
   "type": "Arc move CCW",
   "format": "G3 [X{POSITION} Y{POSITION} I{DISTANCE} J{DISTANCE} E{AMOUNT} F{FEEDRATE}]",
   "description": "Move tool in counter-clockwise arc.",
-  "usage_notes": "Move to the X,Y coordinates in an arc with a center of I,J.",
+  "usage notes": "Move to the X,Y coordinates in an arc with a center of I,J.",
   "parameters": [
     {
       "parameter": "X{n}",
@@ -36,7 +36,7 @@
       "explanation": "Move to 100,105 in a counter-clockwise arc around 100, 100."
     }
   ],
-  "see_also": [
+  "related": [
     "G2"
   ],
   "support": {
