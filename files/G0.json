@@ -1,39 +1,45 @@
 {
-  "code": "G0",
-  "type": "Rapid move",
-  "format": "G0 [{AXIS}{POSITION}]",
-  "description": "G0 is used to position the tool.  G0 is expected to be used when not using the tool, but firmware such as Marlin interprets G0 and G1 as the same command.",
-  "usage notes": "G0 and G1 may be interpreted as the same command in some firmare.",
-  "parameters": [
-    {
-      "parameter": "X{n}",
-      "description": "Move n units along the X axis."
-    },
-    {
-      "parameter": "X{n} Y{n} F{n}",
-      "description": "Move N units along the X and Y axis at F speed or slower."
-    },
-    {
-      "parameter": "Z{n}",
-      "description": "Move n units along the Z axis."
-    },
-    {
-      "parameter": "F{n}",
-      "description": "Set feedrate. Moves after this command will automatically use the specified feed rate."
+  "G0": {
+    "code": "G0",
+    "type": "Rapid move",
+    "format": "G0 [{AXIS}{POSITION}]",
+    "description": "G0 is used to position the tool.  G0 is expected to be used when not using the tool, but firmware such as Marlin interprets G0 and G1 as the same command.",
+    "usage notes": "G0 and G1 may be interpreted as the same command in some firmare.",
+    "parameters": [
+      {
+        "parameter": "X{n}",
+        "description": "Move n units along the X axis."
+      },
+      {
+        "parameter": "Y{n}",
+        "description": "Move N units along the Y axis."
+      },
+      {
+        "parameter": "X{n}",
+        "description": "Move N units along the X axis."
+      },
+      {
+        "parameter": "Z{n}",
+        "description": "Move n units along the Z axis."
+      },
+      {
+        "parameter": "F{n}",
+        "description": "Set feedrate. Moves after this command will automatically use the specified feed rate."
+      }
+    ],
+    "examples": [
+      {
+        "example": "G0 X100 Y100",
+        "explanation": "Move 100 units on both the X and Y axis. The tool would move diagonally."
+      }
+    ],
+    "related": [
+      "G1"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
     }
-  ],
-  "examples": [
-    {
-      "example": "G0 X100 Y100",
-      "explanation": "Move 100 units on both the X and Y axis. The tool would move diagonally."
-    }
-  ],
-  "related": [
-    "G1"
-  ],
-  "support": {
-    "Marlin": true,
-    "Redeem": true,
-    "Smoothieware": true
   }
 }

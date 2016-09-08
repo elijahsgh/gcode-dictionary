@@ -1,24 +1,26 @@
 {
-  "code": "G4",
-  "type": "Dwell.  Timed wait.",
-  "format": "G4 [S{SECONDS} P{MILLISECONDS}]",
-  "description": "Wait for a specific amount of time before continuing.",
-  "usage notes": "Both S and P may not be implemented by your firmware.",
-  "parameters": [
-    {
-      "parameter": "S{n}",
-      "description": "Wait for n seconds."
-    },
-    {
-      "parameter": "P{n}",
-      "description": "Wait for n milliseconds."
+  "G4": {
+    "code": "G4",
+    "type": "Dwell.  Timed wait.",
+    "format": "G4 [S{SECONDS} P{MILLISECONDS}]",
+    "description": "Wait for a specific amount of time before continuing.",
+    "usage notes": "Both S and P may not be implemented by your firmware.",
+    "parameters": [
+      {
+        "parameter": "S{n}",
+        "description": "Wait for n seconds."
+      },
+      {
+        "parameter": "P{n}",
+        "description": "Wait for n milliseconds."
+      }
+    ],
+    "related": [
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
     }
-  ],
-  "related": [
-  ],
-  "support": {
-    "Marlin": true,
-    "Redeem": true,
-    "Smoothieware": true
   }
 }
