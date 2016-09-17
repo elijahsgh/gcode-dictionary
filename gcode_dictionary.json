@@ -18,19 +18,47 @@
     "usage notes": "Only supported by Redeem."
   },
   "G0": {
-    "code": "G10",
-    "description": "Perform retract using firmware configured retraction setting.",
-    "format": "G10",
+    "code": "G0",
+    "description": "G0 is used to position the tool.  G0 is expected to be used when not using the tool, but firmware such as Marlin interprets G0 and G1 as the same command.",
+    "examples": [
+      {
+        "example": "G0 X100 Y100",
+        "explanation": "Move 100 units on both the X and Y axis. The tool would move diagonally."
+      }
+    ],
+    "format": "G0 [{AXIS}{POSITION}]",
+    "parameters": [
+      {
+        "description": "Move n units along the X axis.",
+        "parameter": "X{n}"
+      },
+      {
+        "description": "Move N units along the Y axis.",
+        "parameter": "Y{n}"
+      },
+      {
+        "description": "Move N units along the X axis.",
+        "parameter": "X{n}"
+      },
+      {
+        "description": "Move n units along the Z axis.",
+        "parameter": "Z{n}"
+      },
+      {
+        "description": "Set feedrate. Moves after this command will automatically use the specified feed rate.",
+        "parameter": "F{n}"
+      }
+    ],
     "related": [
-      "M207"
+      "G1"
     ],
     "support": {
       "Marlin": true,
-      "Redeem": false,
+      "Redeem": true,
       "Smoothieware": true
     },
-    "type": "Tool action",
-    "usage notes": "Firmware retraction configured with M207."
+    "type": "Move",
+    "usage notes": "G0 and G1 may be interpreted as the same command in some firmare."
   },
   "G1": {
     "code": "G1",
@@ -78,6 +106,21 @@
     },
     "type": "Move",
     "usage notes": "G0 and G1 may be interpreted as the same command in some firmware."
+  },
+  "G10": {
+    "code": "G10",
+    "description": "Perform retract using firmware configured retraction setting.",
+    "format": "G10",
+    "related": [
+      "M207"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Tool action",
+    "usage notes": "Firmware retraction configured with M207."
   },
   "G2": {
     "code": "G2",
@@ -359,6 +402,24 @@
     },
     "type": "Information",
     "usage notes": "Only supported by Redeem."
+  },
+  "M115": {
+    "code": "M115",
+    "description": "Display firmware version.",
+    "examples": [
+      {
+        "example": "M115",
+        "explanation": "Return string associated with firmware."
+      }
+    ],
+    "format": "M115",
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": false
+    },
+    "type": "Information",
+    "usage_notes": "The implementation may vary by board, but generally includes the firmware type, version, and possibly a build string."
   },
   "M207": {
     "code": "M207",
