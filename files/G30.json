@@ -1,0 +1,23 @@
+{
+  "G30": {
+    "code": "G30",
+    "type": "Configuration",
+    "format": "G30 [X{n} Y{n} Z{n} P{n}]",
+    "description": "Probe single point with the Z probe and save as Point P.",
+    "usage notes": "Seek until Z probe is triggered at a specific point and report when triggered.  Extended options may be available in your firmware.",
+    "examples": [
+      {
+        "example": "G30 P1 X0 Y0 Z0",
+        "explanation": "Seek Z = 0 at X = 0, Y = 0 and save as point P."
+      }
+    ],
+    "related": [
+      "G28", "G29"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    }
+  }
+}

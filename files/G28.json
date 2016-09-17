@@ -1,0 +1,33 @@
+{
+  "G28": {
+    "code": "G28",
+    "type": "Configuration",
+    "format": "G28 [AXIS ...]",
+    "description": "Home.  Specify an axis, several, or use G28 with no parameters to home all.",
+    "usage notes": "G28 will cause an axis to seek its configured endstop.  Smoothieware features a number of G28 sub commands implemented as G28.n.",
+    "parameters": [
+      {
+        "parameter": "[AXIS]",
+        "description": "Home specified axis."
+      }
+    ],
+    "examples": [
+      {
+        "example": "G28 X Y",
+        "explanation": "Instruct the printer to seek the configured endstop for both X and Y."
+      },
+      {
+        "example": "G28",
+        "explanation": "Home all."
+      }
+    ],
+    "related": [
+      "G29"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    }
+  }
+}

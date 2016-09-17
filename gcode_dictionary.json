@@ -1,46 +1,36 @@
 {
-  "G0": {
-    "code": "G0",
-    "description": "G0 is used to position the tool.  G0 is expected to be used when not using the tool, but firmware such as Marlin interprets G0 and G1 as the same command.",
+  "G": {
+    "code": "G",
+    "description": "G lists all suported gcode",
     "examples": [
       {
-        "example": "G0 X100 Y100",
-        "explanation": "Move 100 units on both the X and Y axis. The tool would move diagonally."
+        "example": "G",
+        "explanation": "List all supported gcode"
       }
     ],
-    "format": "G0 [{AXIS}{POSITION}]",
-    "parameters": [
-      {
-        "description": "Move n units along the X axis.",
-        "parameter": "X{n}"
-      },
-      {
-        "description": "Move N units along the Y axis.",
-        "parameter": "Y{n}"
-      },
-      {
-        "description": "Move N units along the X axis.",
-        "parameter": "X{n}"
-      },
-      {
-        "description": "Move n units along the Z axis.",
-        "parameter": "Z{n}"
-      },
-      {
-        "description": "Set feedrate. Moves after this command will automatically use the specified feed rate.",
-        "parameter": "F{n}"
-      }
-    ],
+    "format": "G",
+    "support": {
+      "Marlin": false,
+      "Redeem": true,
+      "Smoothieware": false
+    },
+    "type": "Information",
+    "usage notes": "Only supported by Redeem."
+  },
+  "G0": {
+    "code": "G10",
+    "description": "Perform retract using firmware configured retraction setting.",
+    "format": "G10",
     "related": [
-      "G1"
+      "M207"
     ],
     "support": {
       "Marlin": true,
-      "Redeem": true,
+      "Redeem": false,
       "Smoothieware": true
     },
-    "type": "Rapid move",
-    "usage notes": "G0 and G1 may be interpreted as the same command in some firmare."
+    "type": "Tool action",
+    "usage notes": "Firmware retraction configured with M207."
   },
   "G1": {
     "code": "G1",
@@ -86,7 +76,7 @@
       "Redeem": true,
       "Smoothieware": true
     },
-    "type": "Linear move",
+    "type": "Move",
     "usage notes": "G0 and G1 may be interpreted as the same command in some firmware."
   },
   "G2": {
@@ -94,8 +84,8 @@
     "description": "Move tool in clockwise arc.",
     "examples": [
       {
-        "example": "G2 X100 Y105 I100 J100",
-        "explanation": "Move to 100,105 in a clockwise arc around 100, 100."
+        "example": "G2 X105 Y105 I100 J100",
+        "explanation": "Move to 105,105 in a clockwise arc around 100, 100."
       }
     ],
     "format": "G2 [X{POSITION} Y{POSITION} I{DISTANCE} J{DISTANCE} E{AMOUNT} F{FEEDRATE}]",
@@ -133,16 +123,99 @@
       "Redeem": true,
       "Smoothieware": true
     },
-    "type": "Arc move CW",
+    "type": "Move",
     "usage notes": "Move to the X,Y coordinates in an arc with a center of I,J."
+  },
+  "G20": {
+    "code": "G20",
+    "description": "Set units to inches.",
+    "format": "G20",
+    "related": [
+      "G21"
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "Instruct the printer to interpret units in inches."
+  },
+  "G21": {
+    "code": "G21",
+    "description": "Set units to millimeters.",
+    "format": "G21",
+    "related": [
+      "G20"
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "Instruct the printer to interpret units in millimeters."
+  },
+  "G28": {
+    "code": "G28",
+    "description": "Home.  Specify an axis, several, or use G28 with no parameters to home all.",
+    "examples": [
+      {
+        "example": "G28 X Y",
+        "explanation": "Instruct the printer to seek the configured endstop for both X and Y."
+      },
+      {
+        "example": "G28",
+        "explanation": "Home all."
+      }
+    ],
+    "format": "G28 [AXIS ...]",
+    "parameters": [
+      {
+        "description": "Home specified axis.",
+        "parameter": "[AXIS]"
+      }
+    ],
+    "related": [
+      "G29"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "G28 will cause an axis to seek its configured endstop.  Smoothieware features a number of G28 sub commands implemented as G28.n."
+  },
+  "G29": {
+    "code": "G29",
+    "description": "Detailed Z probe",
+    "examples": [
+      {
+        "example": "G29",
+        "explanation": "Initiate Z probing/Automatic Bed Leveling."
+      }
+    ],
+    "format": "G29",
+    "related": [
+      "G28",
+      "G30"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "The Z probing process may be firmware dependent and configurable.  The routine should perform any required actions (such as deploying a probe, picking up a sled, etc) to prepare the tool to probe and configure Z.  Depending on configuration, this may also initiate any automatic bed leveling (ABL) features in the firmware."
   },
   "G3": {
     "code": "G3",
     "description": "Move tool in counter-clockwise arc.",
     "examples": [
       {
-        "example": "G2 X100 Y105 I100 J100",
-        "explanation": "Move to 100,105 in a counter-clockwise arc around 100, 100."
+        "example": "G2 X105 Y105 I100 J100",
+        "explanation": "Move to 105,105 in a counter-clockwise arc around 100, 100."
       }
     ],
     "format": "G3 [X{POSITION} Y{POSITION} I{DISTANCE} J{DISTANCE} E{AMOUNT} F{FEEDRATE}]",
@@ -180,8 +253,30 @@
       "Redeem": true,
       "Smoothieware": true
     },
-    "type": "Arc move CCW",
+    "type": "Move",
     "usage notes": "Move to the X,Y coordinates in an arc with a center of I,J."
+  },
+  "G30": {
+    "code": "G30",
+    "description": "Probe single point with the Z probe and save as Point P.",
+    "examples": [
+      {
+        "example": "G30 P1 X0 Y0 Z0",
+        "explanation": "Seek Z = 0 at X = 0, Y = 0 and save as point P."
+      }
+    ],
+    "format": "G30 [X{n} Y{n} Z{n} P{n}]",
+    "related": [
+      "G28",
+      "G29"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "Seek until Z probe is triggered at a specific point and report when triggered.  Extended options may be available in your firmware."
   },
   "G4": {
     "code": "G4",
@@ -203,7 +298,223 @@
       "Redeem": true,
       "Smoothieware": true
     },
-    "type": "Dwell.  Timed wait.",
-    "usage notes": "Both S and P may not be implemented by your firmware."
+    "type": "Wait"
+  },
+  "G90": {
+    "code": "G90",
+    "description": "Configure printer to use absolute movements.",
+    "examples": [
+      {
+        "example": "G90 ; G0 X5 Y5",
+        "explanation": "Instruct the tool to move to absolute coordinate 5,5."
+      }
+    ],
+    "format": "G90",
+    "related": [
+      "G91"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "Movement by the tool will be interpreted as an absolute coordinate."
+  },
+  "G91": {
+    "code": "G91",
+    "description": "Configure printer to use relative movements.",
+    "examples": [
+      {
+        "example": "G91 ; G0 X5",
+        "explanation": "Instruct the tool to move to +5 units from the current position on the X axis."
+      }
+    ],
+    "format": "G91",
+    "related": [
+      "G91"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "Movement by the tool will be interpreted as relative to the current position of the tool."
+  },
+  "M": {
+    "code": "M",
+    "description": "M lists all suported mcode.",
+    "examples": [
+      {
+        "example": "M",
+        "explanation": "List all supported mcode."
+      }
+    ],
+    "format": "M",
+    "support": {
+      "Marlin": false,
+      "Redeem": true,
+      "Smoothieware": false
+    },
+    "type": "Information",
+    "usage notes": "Only supported by Redeem."
+  },
+  "M207": {
+    "code": "M207",
+    "description": "Configures firmware retract settings.",
+    "examples": [
+      {
+        "example": "M207 S1",
+        "explanation": "Retract 1mm during retraction requests."
+      },
+      {
+        "example": "M207 S1 F12 Z1",
+        "explanation": "Retract 1mm during retraction requests at 12 mm/minute and also lift the tool (hop) by 1mm while retracting."
+      }
+    ],
+    "format": "M207 [S[amount] F[feedrate] Z[z lift]]",
+    "parameters": [
+      {
+        "description": "Retract {n} units.  {n} is expected to be a positive number.",
+        "parameter": "S{n}"
+      },
+      {
+        "description": "Retraction feed rate (speed).",
+        "parameter": "F{n}"
+      },
+      {
+        "description": "Amount to raise the tool during firmware retract.",
+        "parameter": "Z{n}"
+      }
+    ],
+    "related": [
+      "G10"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Tool control",
+    "usage notes": "Using firmware retraction helps to make gcode more portable and easier to maintain across printers or filament types.  Smoothieware implements an additional Q parameter for specifying the Z lift feed rate."
+  },
+  "M500": {
+    "code": "M500",
+    "description": "Save current configuration.",
+    "examples": [
+      {
+        "example": "M500",
+        "explanation": "Save configuration."
+      }
+    ],
+    "format": "M500",
+    "related": [
+      "M501",
+      "M502",
+      "M503"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "User configurable settings are saved to storage.  The settings that are saved are firmware dependent.  For Marlin, this saves to the eeprom, while Redeem and Smoothie save to files."
+  },
+  "M501": {
+    "code": "M501",
+    "description": "Load saved configuration.",
+    "examples": [
+      {
+        "example": "M501",
+        "explanation": "Load configuration."
+      }
+    ],
+    "format": "M501",
+    "related": [
+      "M500",
+      "M502",
+      "M503"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "User configurable settings are loaded from storage.  The settings that are loaded are firmware dependent.  For Marlin, this loads from the eeprom, while Smoothie loads from files."
+  },
+  "M502": {
+    "code": "M502",
+    "description": "Load default configuration.",
+    "examples": [
+      {
+        "example": "M502",
+        "explanation": "Reset configuration."
+      }
+    ],
+    "format": "M502",
+    "related": [
+      "M500",
+      "M501",
+      "M503"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "User configurable settings are reset.  The settings that are loaded are firmware dependent.  For Marlin, remember that eeprom is persistent across firmware flashes and an M502 + M500 should be issued."
+  },
+  "M503": {
+    "code": "M503",
+    "description": "Print configuration.",
+    "examples": [
+      {
+        "example": "M503",
+        "explanation": "Print configuration."
+      }
+    ],
+    "format": "M503",
+    "related": [
+      "M500",
+      "M501",
+      "M502"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    },
+    "type": "Configuration",
+    "usage notes": "Display any user configurable settings and their values.  User configurable settings vary by firmware."
+  },
+  "M608": {
+    "code": "M608",
+    "description": "Print or configure slave settings for stepper motors.",
+    "examples": [
+      {
+        "example": "M608",
+        "explanation": "Print configuration."
+      },
+      {
+        "example": "M608 ZH",
+        "explanation": "Set H as a slave to Z."
+      },
+      {
+        "example": "M608 Z",
+        "explanation": "Clear any slave configuration for Z."
+      }
+    ],
+    "format": "M608 [AXIS [SLAVE AXIS]]",
+    "support": {
+      "Marlin": false,
+      "Redeem": true,
+      "Smoothieware": false
+    },
+    "type": "Configuration",
+    "usage notes": "Configures a stepper to act as a slave to another stepper.  Slave mode enables using steppers on independent drivers to be configured to act identically, avoiding using a single stepper to drive two motors - a common scenario for Z on cartesian printers."
   }
 }

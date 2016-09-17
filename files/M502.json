@@ -1,0 +1,23 @@
+{
+  "M502": {
+    "code": "M502",
+    "type": "Configuration",
+    "format": "M502",
+    "description": "Load default configuration.",
+    "usage notes": "User configurable settings are reset.  The settings that are loaded are firmware dependent.  For Marlin, remember that eeprom is persistent across firmware flashes and an M502 + M500 should be issued.",
+    "examples": [
+      {
+        "example": "M502",
+        "explanation": "Reset configuration."
+      }
+    ],
+    "related": [
+      "M500", "M501", "M503"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

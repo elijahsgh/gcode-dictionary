@@ -1,0 +1,23 @@
+{
+  "M500": {
+    "code": "M500",
+    "type": "Configuration",
+    "format": "M500",
+    "description": "Save current configuration.",
+    "usage notes": "User configurable settings are saved to storage.  The settings that are saved are firmware dependent.  For Marlin, this saves to the eeprom, while Redeem and Smoothie save to files.",
+    "examples": [
+      {
+        "example": "M500",
+        "explanation": "Save configuration."
+      }
+    ],
+    "related": [
+      "M501", "M502", "M503"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    }
+  }
+}

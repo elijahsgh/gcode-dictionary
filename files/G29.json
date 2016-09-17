@@ -1,0 +1,23 @@
+{
+  "G29": {
+    "code": "G29",
+    "type": "Configuration",
+    "format": "G29",
+    "description": "Detailed Z probe",
+    "usage notes": "The Z probing process may be firmware dependent and configurable.  The routine should perform any required actions (such as deploying a probe, picking up a sled, etc) to prepare the tool to probe and configure Z.  Depending on configuration, this may also initiate any automatic bed leveling (ABL) features in the firmware.",
+    "examples": [
+      {
+        "example": "G29",
+        "explanation": "Initiate Z probing/Automatic Bed Leveling."
+      }
+    ],
+    "related": [
+      "G28", "G30"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    }
+  }
+}

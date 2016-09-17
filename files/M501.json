@@ -1,0 +1,23 @@
+{
+  "M501": {
+    "code": "M501",
+    "type": "Configuration",
+    "format": "M501",
+    "description": "Load saved configuration.",
+    "usage notes": "User configurable settings are loaded from storage.  The settings that are loaded are firmware dependent.  For Marlin, this loads from the eeprom, while Smoothie loads from files.",
+    "examples": [
+      {
+        "example": "M501",
+        "explanation": "Load configuration."
+      }
+    ],
+    "related": [
+      "M500", "M502", "M503"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

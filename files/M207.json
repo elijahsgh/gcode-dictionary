@@ -1,0 +1,41 @@
+{
+  "M207": {
+    "code": "M207",
+    "type": "Tool control",
+    "format": "M207 [S[amount] F[feedrate] Z[z lift]]",
+    "description": "Configures firmware retract settings.",
+    "usage notes": "Using firmware retraction helps to make gcode more portable and easier to maintain across printers or filament types.  Smoothieware implements an additional Q parameter for specifying the Z lift feed rate.",
+    "parameters": [
+      {
+        "parameter": "S{n}",
+        "description": "Retract {n} units.  {n} is expected to be a positive number."
+      },
+      {
+        "parameter": "F{n}",
+        "description": "Retraction feed rate (speed)."
+      },
+      {
+        "parameter": "Z{n}",
+        "description": "Amount to raise the tool during firmware retract."
+      }
+    ],
+    "examples": [
+      {
+        "example": "M207 S1",
+        "explanation": "Retract 1mm during retraction requests."
+      },
+      {
+        "example": "M207 S1 F12 Z1",
+        "explanation": "Retract 1mm during retraction requests at 12 mm/minute and also lift the tool (hop) by 1mm while retracting."
+      }
+    ],
+    "related": [
+      "G10"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

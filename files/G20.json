@@ -1,0 +1,17 @@
+{
+  "G20": {
+    "code": "G20",
+    "type": "Configuration",
+    "format": "G20",
+    "description": "Set units to inches.",
+    "usage notes": "Instruct the printer to interpret units in inches.",
+    "related": [
+      "G21"
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

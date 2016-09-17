@@ -1,10 +1,9 @@
 {
   "G4": {
     "code": "G4",
-    "type": "Dwell.  Timed wait.",
+    "type": "Wait",
     "format": "G4 [S{SECONDS} P{MILLISECONDS}]",
     "description": "Wait for a specific amount of time before continuing.",
-    "usage notes": "Both S and P may not be implemented by your firmware.",
     "parameters": [
       {
         "parameter": "S{n}",

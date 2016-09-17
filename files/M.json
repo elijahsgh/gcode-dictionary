@@ -1,0 +1,20 @@
+{
+  "M": {
+    "code": "M",
+    "type": "Information",
+    "format": "M",
+    "description": "M lists all suported mcode.",
+    "usage notes": "Only supported by Redeem.",
+    "examples": [
+      {
+        "example": "M",
+        "explanation": "List all supported mcode."
+      }
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": true,
+      "Smoothieware": false
+    }
+  }
+}

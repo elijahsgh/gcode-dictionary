@@ -1,0 +1,28 @@
+{
+  "M608": {
+    "code": "M608",
+    "type": "Configuration",
+    "format": "M608 [AXIS [SLAVE AXIS]]",
+    "description": "Print or configure slave settings for stepper motors.",
+    "usage notes": "Configures a stepper to act as a slave to another stepper.  Slave mode enables using steppers on independent drivers to be configured to act identically, avoiding using a single stepper to drive two motors - a common scenario for Z on cartesian printers.",
+    "examples": [
+      {
+        "example": "M608",
+        "explanation": "Print configuration."
+      },
+      {
+        "example": "M608 ZH",
+        "explanation": "Set H as a slave to Z."
+      },
+      {
+        "example": "M608 Z",
+        "explanation": "Clear any slave configuration for Z."
+      }
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": true,
+      "Smoothieware": false
+    }
+  }
+}

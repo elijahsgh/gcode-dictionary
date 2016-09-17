@@ -1,0 +1,17 @@
+{
+  "G0": {
+    "code": "G10",
+    "type": "Tool action",
+    "format": "G10",
+    "description": "Perform retract using firmware configured retraction setting.",
+    "usage notes": "Firmware retraction configured with M207.",
+    "related": [
+      "M207"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "G21": {
+    "code": "G21",
+    "type": "Configuration",
+    "format": "G21",
+    "description": "Set units to millimeters.",
+    "usage notes": "Instruct the printer to interpret units in millimeters.",
+    "related": [
+      "G20"
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "G91": {
+    "code": "G91",
+    "type": "Configuration",
+    "format": "G91",
+    "description": "Configure printer to use relative movements.",
+    "usage notes": "Movement by the tool will be interpreted as relative to the current position of the tool.",
+    "examples": [
+      {
+        "example": "G91 ; G0 X5",
+        "explanation": "Instruct the tool to move to +5 units from the current position on the X axis."
+      }
+    ],
+    "related": [
+      "G91"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    }
+  }
+}

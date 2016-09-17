@@ -1,0 +1,23 @@
+{
+  "G90": {
+    "code": "G90",
+    "type": "Configuration",
+    "format": "G90",
+    "description": "Configure printer to use absolute movements.",
+    "usage notes": "Movement by the tool will be interpreted as an absolute coordinate.",
+    "examples": [
+      {
+        "example": "G90 ; G0 X5 Y5",
+        "explanation": "Instruct the tool to move to absolute coordinate 5,5."
+      }
+    ],
+    "related": [
+      "G91"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": true
+    }
+  }
+}

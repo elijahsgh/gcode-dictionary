@@ -1,0 +1,20 @@
+{
+  "G": {
+    "code": "G",
+    "type": "Information",
+    "format": "G",
+    "description": "G lists all suported gcode",
+    "usage notes": "Only supported by Redeem.",
+    "examples": [
+      {
+        "example": "G",
+        "explanation": "List all supported gcode"
+      }
+    ],
+    "support": {
+      "Marlin": false,
+      "Redeem": true,
+      "Smoothieware": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "M503": {
+    "code": "M503",
+    "type": "Configuration",
+    "format": "M503",
+    "description": "Print configuration.",
+    "usage notes": "Display any user configurable settings and their values.  User configurable settings vary by firmware.",
+    "examples": [
+      {
+        "example": "M503",
+        "explanation": "Print configuration."
+      }
+    ],
+    "related": [
+      "M500", "M501", "M502"
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": false,
+      "Smoothieware": true
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "G2": {
     "code": "G2",
-    "type": "Arc move CW",
+    "type": "Move",
     "format": "G2 [X{POSITION} Y{POSITION} I{DISTANCE} J{DISTANCE} E{AMOUNT} F{FEEDRATE}]",
     "description": "Move tool in clockwise arc.",
     "usage notes": "Move to the X,Y coordinates in an arc with a center of I,J.",
@@ -33,8 +33,8 @@
     ],
     "examples": [
       {
-        "example": "G2 X100 Y105 I100 J100",
-        "explanation": "Move to 100,105 in a clockwise arc around 100, 100."
+        "example": "G2 X105 Y105 I100 J100",
+        "explanation": "Move to 105,105 in a clockwise arc around 100, 100."
       }
     ],
     "related": [
