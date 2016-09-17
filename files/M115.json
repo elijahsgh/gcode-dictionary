@@ -1,0 +1,20 @@
+{
+  "M115": {
+    "code": "M115",
+    "type": "Information",
+    "format": "M115",
+    "description": "Display firmware version.",
+    "usage_notes": "The implementation may vary by board, but generally includes the firmware type, version, and possibly a build string.",
+    "examples": [
+      {
+        "example": "M115",
+        "explanation": "Return string associated with firmware."
+      }
+    ],
+    "support": {
+      "Marlin": true,
+      "Redeem": true,
+      "Smoothieware": false
+    }
+  }
+}
